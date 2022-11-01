@@ -1,4 +1,6 @@
 import color from './color';
-import mixin from './mixin';
+import * as mixin from './mixin';
 
-export default { color, mixin };
+const theme = { color, mixin };
+
+export default theme;

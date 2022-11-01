@@ -50,6 +50,11 @@ const GlobalStyle = createGlobalStyle`
   	border-spacing: 0;
   }
 
+  /* custom */
+  html {
+    background-color: ${({ theme }) => theme.color.GRAY};
+  }
+
   html,
   *,
   *::before,
@@ -87,6 +92,21 @@ const GlobalStyle = createGlobalStyle`
   button {
     padding: 0;
     cursor: pointer;
+  }
+
+  /* utility classes */
+
+  .sr-only {
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    border: 0 !important;
+    white-space: nowrap !important;
   }
 `;
 
