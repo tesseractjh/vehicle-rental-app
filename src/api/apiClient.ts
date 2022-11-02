@@ -4,14 +4,14 @@ const apiClient = axios.create({
   baseURL: process.env.REACT_APP_API,
 });
 
-axios.interceptors.request.use(
+apiClient.interceptors.request.use(
   (config) => config,
-  (error) => error
+  (error) => Promise.reject(error)
 );
 
-axios.interceptors.response.use(
+apiClient.interceptors.response.use(
   (res) => res,
-  (error) => error
+  (error) => Promise.reject(error)
 );
 
 export default apiClient;

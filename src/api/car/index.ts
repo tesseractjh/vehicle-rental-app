@@ -7,6 +7,6 @@ export type CarRequestQuery = {
 };
 
 export const getCarList = async (params: CarRequestQuery) => {
-  const result = await apiClient.get<{ payload: Car[] }>('/', { params });
-  return result;
+  const { data } = await apiClient.get<{ payload: Car[] }>('', { params });
+  return data;
 };
