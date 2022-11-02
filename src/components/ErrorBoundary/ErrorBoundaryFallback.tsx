@@ -3,11 +3,12 @@ import Fallback from '../Fallback';
 
 type Props = {
   refresh?: () => void;
-};
+} & React.ComponentProps<typeof Fallback>;
 
-function ErrorBoundaryFallback({ refresh }: Props) {
+function ErrorBoundaryFallback({ refresh, children }: Props) {
   return (
     <Fallback>
+      {children}
       <RefreshButton type="button" onClick={refresh}>
         새로고침
       </RefreshButton>

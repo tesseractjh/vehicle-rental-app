@@ -1,5 +1,5 @@
 const CATEGORY = {
-  fuel: {
+  fuelType: {
     gasoline: '가솔린',
     hybrid: '하이브리드',
     ev: '전기',

@@ -33,7 +33,7 @@ export default class ErrorBoundary extends React.Component<Props, State> {
       if (this.props.fallback) {
         return this.props.fallback;
       }
-      return <ErrorBoundaryFallback refresh={() => this.refresh()} />;
+      return <ErrorBoundaryFallback refresh={() => this.refresh()}>오류가 발생했습니다!</ErrorBoundaryFallback>;
     }
     return this.props.children;
   }

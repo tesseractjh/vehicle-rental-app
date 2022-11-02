@@ -9,7 +9,12 @@ function useCarList() {
     staleTime: 60 * 1000,
     suspense: true,
   });
-  return data;
+
+  if (!data || !data.payload) {
+    throw new Error('invalid data');
+  }
+
+  return data.payload;
 }
 
 export default useCarList;
