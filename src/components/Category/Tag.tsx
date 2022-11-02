@@ -29,7 +29,7 @@ const Label = styled.label<{ isChecked: boolean }>`
   display: inline-block;
   padding: 5px 18px;
   background-color: ${({ isChecked, theme }) => theme.color[isChecked ? 'BLACK' : 'GRAY']};
-  border-radius: 28px;
+  border-radius: 24px;
   font-weight: 700;
   font-size: 14px;
   color: ${({ isChecked, theme }) => theme.color[isChecked ? 'WHITE' : 'BLACK']};
