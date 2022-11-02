@@ -1,5 +1,3 @@
-export type Response = { payload: Car[] };
-
 export type Car = {
   id: number;
   amount: number;
