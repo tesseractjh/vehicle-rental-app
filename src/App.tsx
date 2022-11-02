@@ -3,6 +3,7 @@ import { RecoilRoot } from 'recoil';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Main from './pages/Main';
+import Detail from './pages/Detail';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,6 +20,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index element={<Main />} />
+            <Route path=":id" element={<Detail />} />
           </Routes>
         </BrowserRouter>
         <ReactQueryDevtools />
