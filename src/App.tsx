@@ -1,5 +1,14 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Main from './pages/Main';
+
 function App() {
-  return <div />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Main />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
