@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Helmet from '../../components/Helmet';
 import useCarDetail from '../../hooks/useCarDetail';
 import DetailList from './DetailList';
 
@@ -11,6 +12,7 @@ function DetailInfo() {
 
   return (
     <>
+      <Helmet car={car} />
       <ImageWrapper>
         <Image src={imageUrl} alt={`${brand} ${name} 이미지`} />
       </ImageWrapper>
