@@ -6,10 +6,10 @@ type Props = {
   children?: React.ReactNode;
 } & React.ComponentProps<typeof Header>;
 
-function Layout({ category, title, useBackButton, children }: Props) {
+function Layout({ category, title, goBackRoute, children }: Props) {
   return (
     <Container>
-      <Header title={title} useBackButton={useBackButton} />
+      <Header title={title} goBackRoute={goBackRoute} />
       {category || null}
       <Wrapper>{children}</Wrapper>
     </Container>
