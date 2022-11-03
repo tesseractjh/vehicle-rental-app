@@ -1,18 +1,23 @@
 import React, { useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { Car } from '../api/types';
 import CATEGORY from '../constants/category';
 import DetailList from '../pages/Detail/DetailList';
 import dateString from '../utils/dateString';
+import useCarList from './useCarList';
 
 function useCarDetail() {
+  const { id } = useParams();
   const { state } = useLocation();
+  const carList = useCarList({ enabled: !state });
+
+  const car = (state ?? carList.find(({ id: carId }) => id === carId.toString())) as Car;
   const {
     startDate,
     attribute: { segment, fuelType },
     insurance,
     additionalProducts,
-  } = state as Car;
+  } = car;
 
   const details = useMemo<React.ComponentProps<typeof DetailList>[]>(
     () => [
@@ -35,7 +40,7 @@ function useCarDetail() {
     ],
     []
   );
-  return { car: state as Car, details };
+  return { car, details };
 }
 
 export default useCarDetail;

@@ -1,17 +1,14 @@
 import { Suspense } from 'react';
 import ErrorBoundary from '../../components/ErrorBoundary';
 import Fallback from '../../components/Fallback';
-import useCategory from '../../hooks/useCategory';
 import useRefresh from '../../hooks/useRefresh';
 
 type Props = {
   children: React.ReactNode;
 };
 
-function CarListErrorBoundary({ children }: Props) {
-  const { selected } = useCategory();
-  const params = selected === 'ALL' ? {} : { segment: selected };
-  const refresh = useRefresh(['cars', params]);
+function DetailInfoErrorBoundary({ children }: Props) {
+  const refresh = useRefresh(['cars', {}]);
 
   return (
     <ErrorBoundary refresh={refresh}>
@@ -20,4 +17,4 @@ function CarListErrorBoundary({ children }: Props) {
   );
 }
 
-export default CarListErrorBoundary;
+export default DetailInfoErrorBoundary;

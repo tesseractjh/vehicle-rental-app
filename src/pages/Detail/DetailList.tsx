@@ -11,7 +11,7 @@ function DetailList({ title, items }: Props) {
       <Header>{title}</Header>
       <ul>
         {items.map(([key, value]) => (
-          <DetailItem>
+          <DetailItem key={key}>
             <strong>{key}</strong>
             <span>{value}</span>
           </DetailItem>
