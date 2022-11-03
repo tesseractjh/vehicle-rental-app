@@ -11,7 +11,7 @@ function useCarDetail() {
   const { state } = useLocation();
   const carList = useCarList({ enabled: !state });
 
-  const car = (state ?? carList.find(({ id: carId }) => id === carId.toString())) as Car;
+  const car = (state ?? carList?.find(({ id: carId }) => id === carId.toString())) as Car;
   const {
     startDate,
     attribute: { segment, fuelType },
@@ -40,6 +40,7 @@ function useCarDetail() {
     ],
     []
   );
+
   return { car, details };
 }
 

@@ -12,11 +12,11 @@ function useCarList(options: UseQueryOptions<{ payload: Car[] }> = {}) {
     ...options,
   });
 
-  if (!data || !data.payload) {
+  if ((!options || options.enabled) && (!data || !data.payload)) {
     throw new Error('invalid data');
   }
 
-  return data.payload;
+  return data?.payload;
 }
 
 export default useCarList;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Car } from '../../api/types';
@@ -83,4 +82,4 @@ const InfoDetail = styled.p`
   }
 `;
 
-export default React.memo(CarListItem);
+export default CarListItem;

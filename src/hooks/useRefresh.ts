@@ -6,7 +6,7 @@ function useRefresh(queryKey: QueryKey) {
 
   const refresh = useCallback(async () => {
     await queryClient.resetQueries({ queryKey, exact: true });
-  }, [queryClient]);
+  }, [queryKey, queryClient]);
 
   return refresh;
 }
